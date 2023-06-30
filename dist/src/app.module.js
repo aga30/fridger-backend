@@ -11,17 +11,17 @@ const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const users_module_1 = require("./users/users.module");
-const todos_module_1 = require("./todos/todos.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const data_source_1 = require("../db/data-source");
+const shopping_list_module_1 = require("./shopping-list/shopping-list.module");
 let AppModule = exports.AppModule = class AppModule {
 };
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             users_module_1.UsersModule,
-            todos_module_1.TodosModule,
-            typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions)
+            typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions),
+            shopping_list_module_1.ShoppingListModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

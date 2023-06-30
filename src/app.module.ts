@@ -2,15 +2,15 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
-import { TodosModule } from './todos/todos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from 'db/data-source';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @Module({
   imports: [
     UsersModule,
-    TodosModule,
-    TypeOrmModule.forRoot(dataSourceOptions)],
+    TypeOrmModule.forRoot(dataSourceOptions),
+    ShoppingListModule],
   controllers: [AppController],
   providers: [AppService],
 })

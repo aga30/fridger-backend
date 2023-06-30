@@ -6,6 +6,7 @@ exports.dataSourceOptions = {
     type: 'sqlite',
     database: 'db.sqlite',
     entities: ['dist/src/**/*.entity.js'],
+    synchronize: true,
     migrations: [
         'dist/db/migrations/*.js'
     ],
